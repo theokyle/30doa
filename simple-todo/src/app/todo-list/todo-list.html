@@ -1,0 +1,22 @@
+<div class="todo-container">
+    <h2>To-Do List</h2>
+    <input type="text"
+    [(ngModel)]="newTask"
+    placeholder="Enter new task"
+    (keyup.enter)="addTask()">
+
+    <button (click)="addTask()" id="addTask">Add Task</button>
+
+    @if (tasks.length === 0) {
+        <p>No tasks available. Add a new task!</p>
+    }
+
+    <ul>
+        @for (task of tasks; track $index) {
+            <li> 
+                {{task}} 
+                <button (click)="removeTask($index)" id="removeTask">Remove Task</button>
+            </li>
+        }
+    </ul>
+</div>
