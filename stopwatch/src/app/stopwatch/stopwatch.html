@@ -3,6 +3,6 @@
     <p class="time">{{ elapsedTime() | number : "1.1-1" }} seconds</p>
     <div class="controls">
         <button (click)="startstop()">{{ isRunning() ? "Stop" : "Start"}}</button>
-        <button (click)="reset()" [disabled]="!elapsedTime">Reset</button>
+        <button (click)="reset()" [disabled]="!elapsedTime()">Reset</button>
     </div>
 </div>
